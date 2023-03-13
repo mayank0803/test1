@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WhatsApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/web.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://static.whatsapp.net/rsrc.php/v3/yP/r/rYZqPCBaG70.png">
+    <style>
+        *{
+    box-sizing: border-box;
+    font-family:    Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 90px;
+    background-color: rgb(21, 204, 164);
+    color: white;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1;
+}
+nav .short_nav{
+    display: none;
+}
+.nav_options{
+    list-style-type: none;
+}
+.nav_options{
+    flex-basis: 47%;
+    display: inline-flex;
+    font-size: 14px;
+    justify-content: space-between;
+}
+.whatsapp_logo{
+    text-align: center;
+}
+.whatsapp_logo span{
+    font-size: 20px;
+    vertical-align: 50%;
+}
+.nav_options>li{
+    display: inline-block;
+}
+nav a{
+    color: white
+}
+.dropdown_main .fa-sort-down{
+    font-size: 10px;
+    vertical-align: top;
+}
+.content_body{
+    position: relative;
+    top: 83px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0% 3%;
+}
+.upper_content{
+    display: flex;
+    flex-direction: row;
+    font-family:  arial,sans-serif;
+    color: rgb(80, 78, 78);
+    line-height: 27px;
+    align-self: center;
+    justify-content: space-evenly;
+    padding-left: 8%;
+    flex-wrap: wrap;
+}
+
+.simple_intro,.mobile_image{
+    flex-basis: 37%;
+}
+.upper_content .simple_intro{
+    align-self: center;
+}
+.upper_content h2{
+    font-weight: lighter;
+    font-size: 30px;
+}
+.upper_content p{
+    font-size: 16px;
+    color: rgb(143, 142, 142);
+}
+.simple_intro #highlight_detail{
+    color: rgb(190, 182, 182);
+    font-size: 12px;
+}
+.details_list{
+    list-style-type: none;
+    line-height: 35px;
+}
+.details_list a{
+    color: rgb(21, 204, 164);
+    font-size: 16px;
+}
+.lower_content{
+    margin: 3% 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    line-height: 22px;
+    color: rgb(131, 125, 125);
+}
+
+.lower_content a{
+    color: rgb(53, 139, 238);
+}
+.lower_content .lower_first{
+    text-align: center;
+    background-color: rgb(208,233,234);
+    flex-basis: 49%;
+    min-width: 339px;
+    padding: 5% 5% 0 5%;
+}
+.lower_first h2,.lower_second h2{
+    font-weight: lighter
+}
+.lower_first p{
+    font-size: 14px;
+}
+.lower_first img{
+    margin-bottom: -1%;
+}
+
+.lower_second{
+    flex-basis: 49%;
+    background-color: rgb(237,248,245);
+    text-align: center;   
+    min-width: 350px;
+}
+.lower_second p{
+    font-size: 14px;
+}
+.lower_second p:nth-child(2){
+    font-weight: bolder;
+    font-size: 11px;
+}
+.lower_second p:nth-child(4){
+    margin: 0% 10%;
+}
+.lower_second .animated_box{
+    overflow: hidden;
+    border-radius: 100%;
+    background-color: rgb(108, 240, 211);
+    width: 230px;
+    height: 230px;
+    margin:10% auto 0 auto;
+}
+@keyframes box_movement{
+    0% {
+        left: 50px;
+        top: 500px;
+    }
+    20% {
+        
+        left: 50px;
+        top: 90px;
+    }
+    40%{
+        left: 500px;
+        top: 90px;
+    }
+    42% {
+        top: 500px;
+        left: 50px;
+    }
+    45% {
+        top: 500px;
+        left: -500px;
+    }
+    48% {
+        left: -500px;
+        top: 90px;
+        
+    }
+    70% {
+        left: 50px;
+        top: 90px;
+    }
+    100%{
+        left: 50px;
+        top: -150px;
+    }
+
+}
+#box_animation{
+    background-color: white;
+    width: 120px;
+    height: 37px;
+    color: black;
+    position: relative;
+    border-bottom-left-radius: 13px;
+    border-top-left-radius: 13px;
+    border-bottom-right-radius: 50px;
+    animation-name: box_movement;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#box_animation .fas{
+    color: rgb(235, 235, 93);
+}
+#box_animation p{
+    font-size: 20px;
+    position: absolute;
+    top: -10px;
+    left: 22px;
+}
+/* .explore_button{
+    position: relative;
+    top: 100px;
+    text-align: center;
+    margin-bottom: 10%;
+} */
+
+.explore_button{
+    margin: 10px;
+    align-self: center;
+    margin: 6% 0;
+}
+
+.explore_button a{
+    display: inline-block;
+    color: rgb(21, 204, 164);
+    background-color: white;
+    border: 2px solid rgb(21, 204, 164);
+    border-radius: 25px;
+    padding: 22px;
+    font-weight: bolder;
+}
+footer{
+    background-color: rgb(39,52,67);
+    position: relative;
+    top: 80px;
+    width: 101%;
+    left: -8px;
+}
+footer ul{
+    list-style: none;
+}
+.bottom_options{
+    display: flex;
+    width: 80%;
+    line-height: 25px;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.bottom_options h4{
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .6);
+    font-size: 15px;
+}
+footer a{
+    color: white;
+    font-size: 14px;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+.bottom_line{
+    background-color: rgb(36, 46, 58);
+    width: 100%;
+}
+.bottom_line p{
+    display: inline-block;
+    color: rgba(255, 255, 255, .6);
+}
+.bottom_line p:nth-of-type(odd){
+    margin-left: 22%;
+}
+.bottom_line p:nth-of-type(even){
+    margin-left: 8.2%;
+}
+
+
+@media only screen and (max-width: 1100px){
+    .nav_options{
+        flex-basis: 80%;
+    }
+    .whatsapp_logo{
+        text-align: center;
+    }
+    .whatsapp_logo span{
+        display: none;
+    }
+    .dropdown_main span{
+        display: none;
+    }
+    .bottom_options{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .bottom_line p:nth-of-type(odd){
+        margin-left: 2%;
+    }
+    .bottom_line p:nth-of-type(even){
+        margin-left: 8.2%;
+    }
+}
+
+@media only screen and (max-width: 765px){
+    @keyframes nav_box {
+        from{
+            right: -500px;
+        }
+        to {
+            right: -2px;
+        }
+    }
+    :root{
+        --nav_size: 250px;
+    }
+    nav {
+        height: var(--nav_size);
+        position: relative;
+        display: inline-block;
+        top: -10px;
+        left: -8px;
+        width: 102%;
+    }
+    nav .part_nav{
+        display: none;
+    }
+    nav .short_nav{
+        display: block;
+    }
+    .short_nav #dropdown{
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+    .short_nav p{
+        text-align: center;
+        font-size: 40px;
+        transition: 0.2s;
+    }
+    .fa-bars{
+        font-size: 30px;
+    }
+    .short_nav li,.short_nav a{
+        color: whitesmoke;
+        font-size: 15px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        line-height: 30px;
+        
+    }
+    .short_nav li{
+        margin-left: -25px;
+    }
+    .dropdown_main span{
+        display: inline;
+    }
+    .short_nav #dropdown:hover ul{
+        display: block;
+        position: absolute;
+        line-height: 27px;
+        right: -5px;
+        top: -20px;
+        width: 180px;
+        height: var(--nav_size);
+        background-color: transparent;
+        animation-name: nav_box;
+        animation-duration: 0.1s;
+        padding-top: 28px;
+        border-left: 5px ridge white;
+    }
+    .short_nav #dropdown:hover + p{
+        text-align: left;
+        font-size: 20px;
+        margin-left: 12px;
+    }
+    .short_nav ul{
+        list-style-type: none;
+        display: none;
+    }
+    
+    .short_nav a:hover li{
+        font-size: 17px;
+    }
+    .content_body{
+        padding: 0 0;
+        top: 10px;
+    }
+    .simple_intro,.mobile_image{
+        flex-basis: 100%;
+    }
+    .mobile_image{
+     
+        text-align: center;
+    }
+    .lower_content .lower_first{
+        
+        flex-basis: 100%;
+    }
+    .lower_second{
+        flex-basis: 100%;
+    }
+    .bottom_options{
+        flex-wrap: wrap;
+        width: 50%
+    }
+    .bottom_line{
+        padding: 0.007% 0;
+    }
+    .bottom_line p{
+        display: block;
+    }
+    .bottom_line p:nth-of-type(odd){
+        margin-left: 2%;
+    }
+    .bottom_line p:nth-of-type(even){
+        margin-left: 2%;
+    }   
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <nav>
+            <div class="whatsapp_logo part_nav">
+
+                <a href="whatsapp web.html"><img src="https://static.whatsapp.net/rsrc.php/v3/yP/r/rYZqPCBaG70.png"
+                        alt="whatsapp_logo" width="40px" height="40px"><span>WhatsApp</span></a>
+            </div>
+            <ul class="nav_options part_nav">
+
+                <li><a href="#">WHATSAPP WEB</a></li>
+                <li><a href="#">FEATURES</a></li>
+                <li><a href="#">DOWNLOADS</a></li>
+                <li><a href="#">SECURITY</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li class="dropdown_main"><i class="fas fa-globe"></i> <span> EN <i class="fas fa-sort-down"></i></span>
+                </li>
+            </ul>
+            <!-- The navigation bar at mobile screen -->
+            <div class="short_nav">
+                <span id="dropdown"><i class="fas fa-bars"></i>
+                    <ul>
+                        <a href="#">
+                            <li>WHATSAPP WEB</li>
+                        </a>
+                        <a href="#">
+                            <li>FEATURES</li>
+                        </a>
+                        <a href="#">
+                            <li>DOWNLOAD</li>
+                        </a>
+                        <a href="#">
+                            <li>SECURITY</li>
+                        </a>
+                        <a href="#">
+                            <li>FAQ</li>
+                        </a>
+                        <li class="dropdown_main"><i class="fas fa-globe"></i> <span> EN <i
+                                    class="fas fa-sort-down"></i></span></li>
+                    </ul>
+                </span>
+                <p><a href="whatsapp web.html"><img src="https://static.whatsapp.net/rsrc.php/v3/yP/r/rYZqPCBaG70.png"
+                            alt="whatsapp_logo" width="70px" height="70px"></a> <br> WhatsApp</p>
+
+            </div>
+        </nav>
+
+        <div class="content_body">
+
+            <div class="upper_content">
+
+                <div class="simple_intro">
+                    <h2>Simple. Secure.<br>Reliable messaging.</h2>
+                    <p>
+                        With WhatsApp, you'll get fast, simple, secure messaging
+                        and calling for free*, available on
+                        phones all over the world.
+                        <br>
+                        <br>
+                        <span id="highlight_detail">
+                            * Data charges may apply. Contact your provider for details.
+                        </span>
+                    </p>
+
+                    <ul class="details_list">
+                        <li><a href="#"><i
+                                    class="fab fa-android"></i> &nbsp Android</a></li>
+                        <li><a href="#"><i
+                                    class="fab fa-apple"></i> &nbsp Iphone</a></li>
+                        <li><a href="#"><i class="fas fa-desktop"></i> &nbsp Mac or
+                                Windows PC</a></li>
+                        <li><a
+                                href="#"><i
+                                    class="fab fa-windows"></i> &nbsp Windows Phone</a></li>
+                    </ul>
+                </div>
+                <div class="mobile_image">
+                    <img src="./mobile.png" alt="Mobile Whatsapp">
+                </div>
+            </div>
+            <div class="lower_content">
+
+                <div class="lower_first">
+
+                    <h2>WhatsApp Business App</h2>
+                    <p>
+                        <a href="#" class="marked_business">WhatsApp Business</a> is an
+                        Android app which is free to download, and was built with the small
+                        business owner in mind. With the app, businesses can interact with customers easily by using
+                        tools to automate, sort, and quickly respond to messages. If you're a large business,<a
+                            href="#" class="marked_business"> learn more
+                            about the WhatsApp Business API</a>.
+                    </p>
+                    <br>
+                    <img src="./mobile 2.png" alt="image of mobile">
+                </div>
+
+                <div class="lower_second">
+
+                    <div class="animated_box">
+                        <div id="box_animation">
+                            <p>Hello!<i class="fas fa-grin-hearts"></i></p>
+                        </div>
+
+                    </div>
+                    <p>END-TO-END ENCRYPTION</p>
+                    <h2>Security By Default</h2>
+                    <p>
+                        Some of your most personal moments are shared on WhatsApp, which is why we built end-to-end
+                        encryption into the latest versions of our app. When end-to-end encrypted, your messages and
+                        calls are secured so only you and the person you're communicating with can read or listen to
+                        them, and nobody in between, not even WhatsApp.
+                    </p>
+                </div>
+
+            </div>
+            <div class="explore_button">
+                <a href="#">EXPLORE FEATURES</a>
+            </div>
+        </div>
+        <footer>
+            <br>
+            <div class="bottom_options">
+                <ul>
+                    <h4>whatsapp</h4>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="#">WhatsApp Web</a></li>
+                    <li><a href="#">business</a></li>
+                </ul>
+                <ul>
+                    <h4>company</h4>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Brand Center</a></li>
+                    <li><a href="#">Get In Touch</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+                <ul>
+                    <h4>download</h4>
+                    <li><a href="#">Mac/PC</a></li>
+                    <li><a href="#">Android</a></li>
+                    <li><a href="#">iPhone</a></li>
+                    <li><a
+                            href="#">Windows
+                            Phone</a></li>
+                    <li><a href="#">Nokia</a></li>
+                </ul>
+                <ul>
+                    <h4>help</h4>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Twiter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+            <div class="bottom_line">
+                <p>2019 &copy; WhatsApp Inc</p>
+                <p><a href="#"> Privacy &amp; Terms</a></p>
+            </div>
+        </footer>
+
+    </div>
+
+
+</body>
+
+</html>
